@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FavoriteCommentTest < ActiveSupport::TestCase
+class FavoritePostTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

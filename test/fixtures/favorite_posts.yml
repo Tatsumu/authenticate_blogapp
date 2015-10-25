@@ -2,8 +2,8 @@
 
 one:
   body: MyString
-  comment_id: 
+  post_id: 
 
 two:
   body: MyString
-  comment_id: 
+  post_id: 
