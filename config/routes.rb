@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   delete 'signout', to: 'sessions#destroy'
   get 'signout', to: 'sessions#destroy'
   resources :sessions, only: [:create]
+  resources :posts, only: [:index, :create, :destroy]
+  resources :favorites, only: [:create, :destroy]
+  get 'favorite', to: 'favorites#index'
+  get 'mypage', to: 'mypages#index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
