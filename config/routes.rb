@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy'
   resources :sessions, only: [:create]
   resources :posts, only: [:index, :create, :destroy]
-  resources :favorites, only: [:create, :destroy]
+  resources :favorites, only: [:index, :create, :destroy]
   get 'favorite', to: 'favorites#index'
   get 'mypage', to: 'mypages#index'
   
