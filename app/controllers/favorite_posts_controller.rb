@@ -1,2 +1,3 @@
 class FavoritePostsController < ApplicationController
+
 end

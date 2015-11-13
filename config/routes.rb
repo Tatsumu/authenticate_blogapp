@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'tops#index'
+  get 'signup', to: 'users#new'
   resources :users, only: [:create]
   get 'signin', to: 'sessions#new'
   delete 'signout', to: 'sessions#destroy'

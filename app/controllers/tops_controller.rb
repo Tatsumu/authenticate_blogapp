@@ -1,6 +1,6 @@
 class TopsController < ApplicationController
 	def index
 		@users = User.all
-		@posts = Post.find(:all, :order => "created_at DESC")
+		@posts = Post.all.order("created_at DESC")
 	end
 end
