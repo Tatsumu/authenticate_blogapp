@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create]
   resources :posts, only: [:index, :create, :destroy]
   resources :favorites, only: [:index, :create, :destroy]
-  get 'favorite', to: 'favorites#index'
   get 'mypage', to: 'mypages#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
