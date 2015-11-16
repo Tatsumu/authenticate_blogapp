@@ -1,18 +1,21 @@
 class PostsController < ApplicationController
 
+	before_action :set_project, only:[:show, :edit, :update, :destroy]
+
 	def index
+		@posts = Post.all
 	end
 
 	def show
 	end
 
 	def new
-		@post = Post.new
+		@posts = Post.new
 	end
 
 	def create
-		@post =  Post.new(post_params)
-		if @post.save
+		@posts =  Post.new(post_params)
+		if @posts.save
 			redirect_to posts_path
 		else
 			render 'new'
@@ -24,7 +27,7 @@ class PostsController < ApplicationController
 	end
 
 	def update
-		if @post.update(post_params)
+		if @posts.update(post_params)
 			redirect_to posts_path
 		else
 			render 'edit'
@@ -32,7 +35,17 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
-		@post.destroy
+		@posts.destroy
 		redirect_to posts_path
 	end
+
+	private
+
+		def post_params
+			params[:post].permit(:title, :description)
+		end
+
+		def set_project
+			@posts = Post.find(params[:id])
+		end
 end

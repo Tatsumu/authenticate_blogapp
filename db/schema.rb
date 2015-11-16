@@ -23,15 +23,6 @@ ActiveRecord::Schema.define(version: 20151103154056) do
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
 
-  create_table "favorite_posts", force: :cascade do |t|
-    t.string   "body"
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "favorite_posts", ["post_id"], name: "index_favorite_posts_on_post_id"
-
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "post_id"

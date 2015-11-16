@@ -2,11 +2,13 @@
 
 <ul>
 	<% @posts.each do |post| %>
-	<li><%= link_to post.title, post_path(post.id) %>
-		<%= link_to "[Edit]", edit_post_path(post.id) %>
-		<%= link_to "[Delete]", post_path(post.id),method: :delete, data:{ confirm: "本当に消してもいいですか?" } %>
+	<li><%= link_to post.title, user_posts_path(post.id) %><!--posts_pathではない！ -->
+		<%= link_to "[Edit]", edit_user_post_path(post.id) %>
+		<%= link_to "[Delete]", user_posts_path(post.id), method: :delete , data:{ confirm: "本当に消してもいいですか?" } %>
 	</li>
 	<% end %>
 </ul>
 
 <p><%= link_to "Add New", new_post_path %></p>
+
+<p><%= link_to "Topへ", root_path %></p>

@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   root 'tops#index'
   get 'signup', to: 'users#new'
-  resources :users, only: [:create]
   get 'signin', to: 'sessions#new'
   delete 'signout', to: 'sessions#destroy'
   get 'signout', to: 'sessions#destroy'
   resources :sessions, only: [:create]
-  resources :posts, only: [:index, :create, :destroy]
+  resources :users, only: [:create, :show] do
+    resources :posts do
+      resources :comments, only:[:create, :destroy]
+    end
+  end
   resources :favorites, only: [:index, :create, :destroy]
   get 'mypage', to: 'mypages#index'
   

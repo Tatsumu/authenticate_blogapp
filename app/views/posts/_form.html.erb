@@ -1,12 +1,12 @@
-<%= form_for @post do |f| %>
+<%= form_for @posts do |f| %>
 
 <p>
 	<%= f.label :title %><br>
 	<%= f.text_field :title %><br>
 	<%= f.label :description %><br>
 	<%= f.text_field :description %>
-	<% if @post.errors.any? %>
-	<%= @post.errors.messages[:title][0] %>
+	<% if @posts.errors.any? %>
+	<%= @posts.errors.messages[:title][0] %>
 	<% end %>
 
 </p>
