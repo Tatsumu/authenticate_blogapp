@@ -5,7 +5,10 @@
 <p><%= link_to "Logout", signout_path %>
 <% if current_user %>
   <p>メールアドレス<%= current_user.email %>でログインしています。</p>
-  <p><%= link_to "Mypage", user_path %></p>
+  <p>あなたのidは<%= current_user.id %>です。</p>
+  <p><%= link_to "Mypage", user_path(current_user) %></p>
+  <p><%= link_to "Add New", new_user_post_path(current_user) %></p>
+
 <% end %>
 <h1>ブログ一覧</h1>
 	<% @posts.each do |post| %>

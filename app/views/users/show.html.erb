@@ -1,2 +1,4 @@
-
 <p><%= link_to "Topへ", root_path %></p>
+<% @posts.each do |post| %>
+	<p><%= link_to post.title, user_posts_path(post.id) %></p>
+	<% end %>

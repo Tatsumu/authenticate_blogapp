@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
 	def update
 		if @posts.update(post_params)
-			redirect_to posts_path
+			redirect_to user_post_path
 		else
 			render 'edit'
 		end
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
 
 	def destroy
 		@posts.destroy
-		redirect_to posts_path
+		redirect_to user_posts_path
 	end
 
 	private

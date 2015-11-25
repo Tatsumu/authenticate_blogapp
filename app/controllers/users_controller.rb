@@ -14,6 +14,8 @@ class UsersController < ApplicationController
 	end
 
 	def show
+		# @posts = Post.find(params[:user_id])
+		@posts = Post.all
 	end
 
 
